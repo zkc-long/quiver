@@ -594,7 +594,7 @@ async fn main {
       }
       pos = pos + 1
     }
-    let short = path.get_view(start=start).unwrap_or("").to_owned()
+    let short = path.get_view(start~).unwrap_or("").to_owned()
     report.write_string(
       "| \{short} | \{file_pass + file_fail + file_skip} | \{file_pass} | \{file_fail} | \{file_skip} |\n",
     )

@@ -17,6 +17,15 @@ ignore(g.add_edge("KNOWS", ada, bob, {}))
 let result = @cypher.run(g, "MATCH (a:Person)-[:KNOWS]->(b) RETURN a.name, b.name")
 ```
 
+## Why not just the registry website
+
+mooncakes.io already lists a module's direct **Dependencies** and **Dependents**, and
+that covers the one-hop questions. Quiver is for the multi-hop ones: who is affected
+three hops downstream of a yank, the shortest path between two packages, whether the
+graph has cycles, which packages rank highest by *transitive* dependents. Those are
+questions about the shape of the graph rather than about one package, so they need a
+query language and an engine behind it, not a per-package page.
+
 ## What is implemented
 
 * dense-id node/edge store with forward and reverse adjacency lists
